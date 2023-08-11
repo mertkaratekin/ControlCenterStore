@@ -8,7 +8,8 @@ namespace ControlCenterX.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var model = Repository.Applications;
+            return View(model);
         }
         [HttpGet] //Eğer bir şey yazılmazsa default httpget olarak tanınır.
         public IActionResult Apply()
