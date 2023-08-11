@@ -9,5 +9,9 @@ namespace ControlCenterX.Controllers
         {
             return View();
         }
+        public IActionResult Apply()
+        {
+            return View();
+        }
     }
 }

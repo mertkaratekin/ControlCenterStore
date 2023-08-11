@@ -1,0 +1,55 @@
+﻿@model Candidate  
+@{
+    ViewData["Title"] = "Apply";
+}
+
+<div class="display-6">
+    Apply
+</div>
+
+<form> 
+    <div class="from-group my-2">
+        <label>Email</label>    @* Kullanıcının mailini girmesi için *@
+        <input name="Email" class="form-control"/>
+    </div>
+    <div class="from-group my-2">
+        <label>FirstName</label>    
+        <input name="FirstName" class="form-control" />
+    </div>
+    <div class="from-group my-2"> @* 2 birim boşluk birakmak için kullanıldı. *@
+        <label>LastName</label>
+        <input name="LastName" class="form-control" />
+    </div>
+    <div class="from-group my-2">
+        <label>Age</label>
+        <select name="Age" class="form-control"> @* form control ilgili alanın yatay olarak tüm sayfayı kaplamsı için kullanılır. *@
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+        </select>
+    </div>
+
+    <fieldset>
+        <legend>Select One Course</legend>
+        <p>
+            <input id="mvc" type="radio" name="SelectedCourse" value="ASP.NET Core MVC" />
+            <label>ASP.NET Core MVC</label>
+        </p>
+        <p>
+            <input id="api" type="radio" name="SelectedCourse" value="ASP.NET Core API" />
+            <label>ASP.NET Core API</label>
+        </p>
+        <p>
+            <input id="blazor" type="radio" name="SelectedCourse" value="Blazor" />
+            <label>Blazor</label>
+        </p>
+    </fieldset>
+
+    <div>
+        <button class="btn btn-primary" type="submit">Apply</button>
+        <a class="btn btn-warning" href="/">Home</a>
+    </div>
+</form>
