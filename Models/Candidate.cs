@@ -1,6 +1,6 @@
 ﻿namespace ControlCenterX.Models
 {
-    public class Candidate   //MODEL İLE İLGİLİ TANIMLAMALAR YAPILDI.
+    public class Candidate   //Model ile ilgili tanımlamalar yapıldı.
     {
         public String? Email { get; set; } = String.Empty;
         public String? FirstName { get; set; } = String.Empty;
