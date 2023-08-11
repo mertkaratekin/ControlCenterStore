@@ -14,6 +14,5 @@
             ApplyAt=DateTime.Now;  //ApplyAt nesnesi üretildiği anda default güncel tarih gelecek.
             /*Eğer constructor tanımlamadan atama yapılsaydı üretildiği anda atanmazdı değer.*/
         }
-
     }
 }
