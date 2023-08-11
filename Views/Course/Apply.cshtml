@@ -7,22 +7,23 @@
     Apply
 </div>
 
-<form method="post" action="/course/apply"> 
+<form method="post" asp-action="Apply">
+    @* asp-controller="Course" yazmıyoruz çünkü aynı controller da olduğu için*@
     <div class="from-group my-2">
-        <label>Email</label>    @* Kullanıcının mailini girmesi için *@
-        <input name="Email" class="form-control"/>
+        <label asp-for="Email"></label>    @* Kullanıcının mailini girmesi için *@
+        <input asp-for="Email" class="form-control"/>
     </div>
     <div class="from-group my-2">
-        <label>FirstName</label>    
-        <input name="FirstName" class="form-control" />
+        <label asp-for="FirstName"></label>    
+        <input asp-for="FirstName" class="form-control" />
     </div>
     <div class="from-group my-2"> @* 2 birim boşluk birakmak için kullanıldı. *@
-        <label>LastName</label>
-        <input name="LastName" class="form-control" />
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
     </div>
     <div class="from-group my-2">
-        <label>Age</label>
-        <select name="Age" class="form-control"> @* form control ilgili alanın yatay olarak tüm sayfayı kaplamsı için kullanılır. *@
+        <label asp-for="Age"></label>
+        <select  asp-for="Age" class="form-control"> @* form control ilgili alanın yatay olarak tüm sayfayı kaplamsı için kullanılır. *@
             <option value="18">18</option>
             <option value="19">19</option>
             <option value="20">20</option>
@@ -30,26 +31,26 @@
             <option value="22">22</option>
             <option value="23">23</option>
         </select>
-    </div>
+    </div>asp-for="SelectedCourse"
 
     <fieldset>
         <legend>Select One Course</legend>
         <p>
-            <input id="mvc" type="radio" name="SelectedCourse" value="ASP.NET Core MVC" />
+            <input id="mvc" type="radio" asp-for="SelectedCourse" value="ASP.NET Core MVC" />
             <label>ASP.NET Core MVC</label>
         </p>
         <p>
-            <input id="api" type="radio" name="SelectedCourse" value="ASP.NET Core API" />
+            <input id="api" type="radio" asp-for="SelectedCourse" value="ASP.NET Core API" />
             <label>ASP.NET Core API</label>
         </p>
         <p>
-            <input id="blazor" type="radio" name="SelectedCourse" value="Blazor" />
+            <input id="blazor" type="radio" asp-for="SelectedCourse" value="Blazor" />
             <label>Blazor</label>
         </p>
     </fieldset>
 
     <div>
         <button class="btn btn-primary" type="submit">Apply</button>
-        <a class="btn btn-warning" href="/">Home</a>
+        <a class="btn btn-warning" asp-controller="Home" asp-action="Index">Home</a>
     </div>
 </form>
