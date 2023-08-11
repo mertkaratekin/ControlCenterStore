@@ -19,7 +19,9 @@ namespace ControlCenterX.Controllers
         [ValidateAntiForgeryToken] // Güvenlik için doğrulama işlemi yapar.
         public IActionResult Apply(Candidate model)
         {
-            return View();
+            Repository.Add(model);
+            return Redirect("/");
+
         }
     }
 }
