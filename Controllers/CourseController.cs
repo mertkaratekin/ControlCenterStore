@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ControlCenterX.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ControlCenterX.Controllers
 {
@@ -9,7 +10,14 @@ namespace ControlCenterX.Controllers
         {
             return View();
         }
+        [HttpGet] //Eğer bir şey yazılmazsa default httpget olarak tanınır.
         public IActionResult Apply()
+        {
+            return View();
+        }
+        [HttpPost] //Attribute
+        [ValidateAntiForgeryToken] // Güvenlik için doğrulama işlemi yapar.
+        public IActionResult Apply(Candidate model)
         {
             return View();
         }
