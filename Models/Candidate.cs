@@ -5,7 +5,7 @@
         public String? Email { get; set; } = String.Empty;  //Email alanı tanımlandığı anda = "" bu şekilde olacak
         public String? FirstName { get; set; } = String.Empty;
         public String? LastName { get; set; } = String.Empty;
-        public String? FullName => $"{FirstName}{LastName?.ToUpper()}"; //? var ise o işlemi yap.
+        public String? FullName => $"{FirstName} {LastName?.ToUpper()}"; //? var ise o işlemi yap.
         public int? Age { get; set; }
         public String? SelectedCourse { get; set; } = String.Empty;
         public DateTime ApplyAt { get; set; }

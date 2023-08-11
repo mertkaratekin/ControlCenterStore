@@ -20,8 +20,7 @@ namespace ControlCenterX.Controllers
         public IActionResult Apply(Candidate model)
         {
             Repository.Add(model);
-            return Redirect("/");
-
+            return View("feedback",model);
         }
     }
 }
