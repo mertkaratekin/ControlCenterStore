@@ -20,6 +20,10 @@ namespace ControlCenterX.Controllers
         [ValidateAntiForgeryToken] // Güvenlik için doğrulama işlemi yapar.
         public IActionResult Apply(Candidate model)
         {
+            if (Repository.Applications.Any(c => c.Email.Equals(model.Email)))
+            {
+                ModelState.AddModelError("", "There is already an application.");
+            }
             if (ModelState.IsValid)
             {
                 Repository.Add(model);
