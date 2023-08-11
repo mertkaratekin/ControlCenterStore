@@ -20,8 +20,12 @@ namespace ControlCenterX.Controllers
         [ValidateAntiForgeryToken] // Güvenlik için doğrulama işlemi yapar.
         public IActionResult Apply(Candidate model)
         {
-            Repository.Add(model);
-            return View("feedback",model);
+            if (ModelState.IsValid)
+            {
+                Repository.Add(model);
+                return View("feedback", model);
+            }else
+            return View();
         }
     }
 }
